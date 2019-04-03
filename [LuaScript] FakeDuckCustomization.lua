@@ -1,13 +1,15 @@
 local rage_ref =  gui.Reference("MISC", "AUTOMATION","Movement")
 
-local fakeduck = gui.Checkbox( rage_ref, "FakeDuckimp", "FakeDuck Improvment", false)
+local fakeduck = gui.Checkbox( rage_ref, "FakeDuckimp", "FakeDuck v2", false)
 local fakeduck_mode
 local fakeduckkey = gui.GetValue('rbot_antiaim_fakeduck')
 local usingfkd = false
 
 local function FakeDuckSetValues()
 
-gui.SetValue('msc_fakelag_mode', 0)
+gui.SetValue('msc_fakelag_mode', math.random(0, 1))
+gui.SetValue("rbot_antiaim_stand_desync", 0);
+gui.SetValue("rbot_antiaim_move_desync", 0);
 end
 local function FakeDuckGetValues()
 
