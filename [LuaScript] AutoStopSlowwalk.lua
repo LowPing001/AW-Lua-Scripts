@@ -24,10 +24,10 @@ callbacks.Register("Draw", function()
     local slowWalkEnabled = input.IsButtonDown(slowWalkBind);
     for i = 1, #autostop_keys do
         if slowWalkEnabled and lPlayer:IsAlive() then
-            local text = "Slowalk Desync enable"
+            local text = "Slowalk Desync"
             local textWidth, textHeight = draw.GetTextSize(text);
             local top = 590
-            draw.Color(150, 185, 1, 255);
+            draw.Color(59, 255, 0, 255);
             draw.FilledRect(0, top, textWidth + 30, top + textHeight + 20);
             draw.Color(16, 0, 0, 255);
             draw.FilledRect(0, top, textWidth + 20, top + textHeight + 20);
