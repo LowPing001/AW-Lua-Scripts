@@ -22,7 +22,7 @@ local Direction;
 local Started;
 local AppleOnBoard;
 
--- stuf that dont need to be edited
+-- things that dont need to be edited
 local MAIN_WINDOW_X, MAIN_WINDOW_Y = 200, 100;
 local is_dragging, is_placing = false;
 local dragging_offset_x, dragging_offset_y;
@@ -31,7 +31,7 @@ Started = false;
 Crashed = false;
 AppleOnBoard = false;
 
---initialise board 
+-- initialise board 
 function NewBoard(BOARD_SIZE)
 	for x = 1, BOARD_SIZE do
 		Board[x] = {}
@@ -95,7 +95,7 @@ function DrawMainBox()
 		dragHandler();
 	end
 	-- movement
-	--update keys
+	-- update keys
 	UpKey = UP_KEY:GetValue();
 	DownKey = DOWN_KEY:GetValue();
 	LeftKey = LEFT_KEY:GetValue();
@@ -168,6 +168,7 @@ function DrawSnake()
 					draw.Color(255,0,0,255);
 					draw.FilledRect(MAIN_WINDOW_X + (BOX_SIZE / 4) + ((x-1) * BOX_SIZE), MAIN_WINDOW_Y + (BOX_SIZE / 4) + ((y-1) * BOX_SIZE), MAIN_WINDOW_X + ((BOX_SIZE / 4)* 3) + ((x-1) * BOX_SIZE),  MAIN_WINDOW_Y + ((BOX_SIZE / 4)* 3) + ((y-1) * BOX_SIZE));
 				end
+				
 			elseif (Board[x][y] > 0) then
 				draw.Color(0,255,0,(Board[x][y] / Snake_Length) * 255);
 				draw.FilledRect(MAIN_WINDOW_X + (BOX_SIZE / 4) + ((x-1) * BOX_SIZE), MAIN_WINDOW_Y + (BOX_SIZE / 4) + ((y-1) * BOX_SIZE), MAIN_WINDOW_X + ((BOX_SIZE / 4)* 3) + ((x-1) * BOX_SIZE),  MAIN_WINDOW_Y + ((BOX_SIZE / 4)* 3) + ((y-1) * BOX_SIZE));
@@ -333,7 +334,7 @@ function EndGameWords()
 	draw.SetFont(END_FONT);
 	draw.Color(gui.GetValue("clr_gui_window_logo1"));
 	draw.Text(0, 0, "You have crashed, your score was : " .. (Snake_Length + 1));
-	draw.Text(0, 50, "Press SPACE to retry");
+	draw.Text(0, 50, "Hold SPACE to retry");
 end
 	
 callbacks.Register("Draw", RoundSliders); 
